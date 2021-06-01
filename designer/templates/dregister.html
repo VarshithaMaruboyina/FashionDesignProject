@@ -1,0 +1,68 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>designer register</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<style>
+		body{
+			background-image: url("https://comps.canstockphoto.com/ashion-shopping-background-with-wom-eps-vector_csp40575946.jpg");
+			
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-width: 100%;
+            min-height: 100%;
+			
+		}
+		.dregister{
+			color:white;
+              position:absolute;
+              top: 10%;
+              left:38%;
+              background-color:#581845;
+              padding-left: 57px;
+              padding-top: 10px;
+              padding-bottom: 10px;
+              box-shadow: 0px 10px 10px 0px orchid; 
+
+		}
+		
+		.mb-3{
+			color: white;
+		}
+		a{
+			color:lavender;
+		}
+		input{
+			width: 85%;
+
+		}
+
+
+
+
+	</style>
+</head>
+<body>
+	<h1 align=center ><strong>Designer Register</strong></h1>
+<form method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+  
+	<div class='dregister'>
+	{% for field in form %}
+	 <div class="mb-3" style="width:100%;">
+	{{ field | as_crispy_field }}
+    </div>
+	{% endfor %}
+	<br>
+	<input type="submit" value="register" style="background-color: pink;height:35px;width:70%;text-align: center;"><br>
+	already have an account?<a href="/dlogin">login</a>
+   </div>
+
+</form>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

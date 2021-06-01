@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		*{
+			margin:0;
+		}
+		.orders{
+			position: absolute;
+			color: red;
+		    top:1%;
+			left: 90%;
+			font-weight: bolder;
+		}
+		.graph{
+			position: absolute;
+			color: red;
+		    top:1%;
+			left: 85%;
+			font-weight: bolder;
+
+		}
+		.mainheading{
+			margin: 0;
+			
+			background-color: #FFE4C4;
+			color: black;
+		}
+		.logout{
+			position: absolute;
+			color: red;
+		    top:1%;
+			left: 95%;
+			font-weight: bolder;
+		}
+		.home{
+			position: absolute;
+			color: red;
+		    top:1%;
+			left: 80%;
+			font-weight: bolder;
+		}
+		a{
+			text-decoration: none;
+		}
+
+	</style>
+</head>
+<body>
+	<a href="/designerhome" class="home">Home</a> 
+<a href="/graph" class="graph">analyse</a>
+	<a class="orders" href="/orders">orders</a>
+	<a class="logout" href="/logout">logout</a>
+  <h1 align="center" class="mainheading">DESIGNER PROFILE PAGE</h1>
+   <br>
+   <br>
+  <img src="data:image/png;base64, {{chart | safe}}" style="max-width: 1000px;">
+</body>
+</html>
+
+
+

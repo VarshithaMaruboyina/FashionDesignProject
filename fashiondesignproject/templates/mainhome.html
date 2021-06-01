@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mainhome</title>
+	<style>
+		body{
+			background-image: url("https://static.businessworld.in/article/article_extra_large_image/1575887765_1rBOuB_digital_fashion.jpg");
+			
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-width: 100%;
+            min-height: 100%;
+
+
+		}
+		.block1{
+			position: absolute;
+			top:85%;
+			left: 60%;
+			background-color: gold;
+			box-shadow: 0px 10px 10px 0px white;
+			padding: 10px;
+			
+		}
+		.block2{
+			position: absolute;
+			top:85%;
+			left: 80%;
+			background-color: crimson;
+			box-shadow: 0px 10px 10px 0px white;
+			padding-left:40px;
+			padding-top: 10px;
+			padding-right:40px;
+			padding-bottom: 10px;
+			
+		}
+		
+	</style>
+</head>
+<body>
+<h1 align="center">Fashion Design Forever</h1> 
+<center>
+<div class="block1">
+	<a href="{% url 'dregister' %}" style="text-decoration: none; color: black; font-size: 30px">DESIGNER</a>
+
+</div>
+<div class="block2">
+<a href="{% url 'uregister' %}" style="text-decoration: none; color:black ;font-size:30px">USER</a>	
+</div>
+</center>
+
+
+
+<script>(function(w, d) { w.CollectId = "5fd4d700278c444f79e6988d"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>
+</body>
+</html>

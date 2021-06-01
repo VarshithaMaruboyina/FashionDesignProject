@@ -1,0 +1,105 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>view</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<style>
+		 body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.mainnav {
+  overflow: hidden;
+  background-color: #fe4164;
+}
+.mainnav:hover{
+  box-shadow: 0px 5px 5px 0px grey;
+}
+
+.mainnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.mainnav a:hover {
+  background-color: #ff91a4;
+  color: black;
+}
+
+.mainnav a.active {
+  background-color:#ff91a4 ;
+  color: white;
+}
+.sizedata{
+  position: absolute;
+    left: 65%;
+    top:10%;
+     background-color: silver;
+     padding-left: 50px;
+     padding-right: 50px;
+     padding-top: 20px;
+     padding-bottom: 20px;
+     box-shadow: 0px 10px 10px 0px lightgrey;
+  }
+  .sizedata:hover{
+    box-shadow: 0px 10px 10px 0px grey;
+  }
+
+  p {
+  max-width: 65ch;
+}
+.input{
+  width:100%;
+}
+
+	</style>
+
+</head>
+<body>
+	<div class="mainnav">
+ <a href="/userhome">HOME</a>
+  <a style="float:right" href="/cart">CART</a>
+  <a style="float:right" href="/designers">OUR DESIGNERS</a>
+  <a style="float:right" href="/dlogout">LOGOUT</a>
+
+
+</div>
+  <br>
+	{% for d in data %}
+	<div class='img' style="width:50;height:50;">
+		<img src="{{d.design.url}}" style="width:50;height:50;">
+		<div class='imgdata' style="width:50;height:50;">
+		<h1>{{d.DesignName}}</h1> 
+		<h1>{{d.price}}rs</h1>
+    <h3>designer name: {{d.name}}</h3>
+		<p >{{d.description}}</p>
+	   </div>
+	</div>
+	{% endfor %}
+
+
+
+<div class='sizedata'>
+  <form method="POST">
+  
+  {% csrf_token %}
+  {% for field in formdata %}
+  {{ field | as_crispy_field }}
+ 
+  {% endfor %}
+  <input type="submit" value="add to cart" style="background-color:pink;width:100%;">
+</form>
+  </div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
